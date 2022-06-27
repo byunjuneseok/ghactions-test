@@ -1,0 +1,23 @@
+name: django 테스트
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches-ignore:
+      - main
+
+env:
+  DJANGO_SETTINGS_MODULE: quatserver.settings.ci
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v3
+      - name: RUN
+        run: |
+          echo "Helloworld"
