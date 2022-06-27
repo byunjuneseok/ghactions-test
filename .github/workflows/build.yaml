@@ -17,6 +17,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: RUN
+        run: |
+          echo ${{ github.event_name }}
       - name: 코드 체크아웃
         uses: actions/checkout@v3
         with:
