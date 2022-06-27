@@ -1,0 +1,13 @@
+branches:
+  main:
+    regex: ^master$|^main$
+    mode: ContinuousDeployment
+    increment: Minor
+  pull-request:
+    tag: pr
+
+next-version: 0.0.0
+ignore:
+  sha: []
+  commits-before: 2021-11-30T00:00:00
+
