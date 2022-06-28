@@ -27,9 +27,6 @@ jobs:
           fi
       - name: check
         run: |
-          echo ${GITHUB_REF#refs/heads/}
-          echo !!!
-
           echo ${{ steps.map-branch.outputs.branch }}
       - name: 코드 체크아웃
         uses: actions/checkout@v3
