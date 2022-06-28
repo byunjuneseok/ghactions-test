@@ -23,13 +23,13 @@ jobs:
           if [[ ${{github.event_name}} == 'workflow_run' ]]; then
               echo "::set-output name=branch::${{ github.event.workflow_run.head_branch }}"
           else
-              echo "::set-output name=branch::${{ github.ref }}"
+              echo "::set-output name=branch::${{ github.ref#refs/heads/ }}"
           fi
       - name: check
         run: |
           echo ${{ steps.map-branch.outputs.branch }}
       - name: 코드 체크아웃
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3``
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
