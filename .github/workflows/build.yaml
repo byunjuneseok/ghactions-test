@@ -29,7 +29,7 @@ jobs:
         run: |
           echo ${{ steps.map-branch.outputs.branch }}
       - name: 코드 체크아웃
-        uses: actions/checkout@v3``
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
