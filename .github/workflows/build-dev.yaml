@@ -23,10 +23,15 @@ jobs:
           if [[ ${{github.event_name}} == 'workflow_run' ]]; then
               echo "::set-output name=branch::${{ github.event.workflow_run.head_branch }}"
           else
-              echo "::set-output name=branch::${ github.ref#refs/heads/ }"
+              echo "::set-output name=branch::${{ github.event.workflow_dispatch.head_branch }}"
           fi
       - name: check
         run: |
+          echo ${{ github.event.workflow_dispatch.head_branch }}
+          echo ${{ github.event.workflow_dispatch.branch }}
+          echo ${{ github.event.workflow_dispatch.branches }}
+          echo !!!
+
           echo ${{ steps.map-branch.outputs.branch }}
       - name: 코드 체크아웃
         uses: actions/checkout@v3
