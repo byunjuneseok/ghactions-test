@@ -45,4 +45,4 @@ jobs:
           configFilePath: .github/version.yaml
       - name: RUN
         run: |
-          git status
+          echo ${{ steps.version.outputs.semVer }}-${{ steps.version.outputs.shortSha }}
