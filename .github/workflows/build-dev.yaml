@@ -28,8 +28,6 @@ jobs:
       - name: check
         run: |
           echo ${GITHUB_REF#refs/heads/}
-          echo ${{ github.event.workflow_dispatch.branch }}
-          echo ${{ github.event.workflow_dispatch.branches }}
           echo !!!
 
           echo ${{ steps.map-branch.outputs.branch }}
