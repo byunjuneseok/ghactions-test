@@ -23,7 +23,7 @@ jobs:
           pip install requests
       - name: 서버 배포 알림
         run: |
-            python .github/workflows/notify_pr.py
+            python .github/workflows/testwork.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ATLASSIAN_DOMAIN: nrise
