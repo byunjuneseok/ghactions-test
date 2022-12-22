@@ -2,6 +2,8 @@ import os
 
 if __name__ == '__main__':
     print('*' * 80)
+    print(os.environ['GITHUB_REF'])
+    print(int(os.environ['GITHUB_REF'].split('/')[-1]))
     print(os.environ)
     print('*' * 80)
     print(os.environ['GITHUB_TOKEN'])
